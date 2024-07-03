@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Modes in Directions</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <script src="/main.js"></script>
+  <style>
+    /* Add your CSS here */
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .floating.panel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .floating.panel input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="floating panel">
+    <div>
+      <input type="text" id="form" placeholder="Origin">
+    </div>
+    <div>
+      <input type="text" id="to" placeholder="Destination">
+    </div>
+    <div>
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCRHDHJrMD86RKYUy9fsFtnCoMsVhi19o&callback=initMap&libraries=&v=weekly" async></script>
+</body>
+</html>
